@@ -1,1 +1,5 @@
-This
+Tech Farm Bid --- Logo
+
+Occupation -> Role
+Remove Address Type -> Add Address, Pin code
+Type of Crops, Types of Crops prefer to buy -> Select(1,2,3,others) -- others-> text field
