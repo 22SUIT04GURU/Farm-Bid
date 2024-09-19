@@ -24,7 +24,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <img src="images/logo.png" alt="">
-        <h1 class="sitename">Farm Bid</h1><span>.</span>
+        <h1 class="sitename">Tech Farm Bid</h1><span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
