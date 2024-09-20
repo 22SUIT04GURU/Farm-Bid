@@ -243,9 +243,8 @@ h6 {
     position: relative;
   }
 
-  .navmenu a,
-  .navmenu a:focus {
-    color: var(--nav-color);
+  .navmenu li,
+  .navmenu li:focus {
     padding: 18px 15px;
     font-size: 13px;
     font-family: var(--nav-font);
@@ -256,6 +255,11 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
   }
 
   .navmenu a i,
@@ -270,7 +274,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li>a:hover,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);

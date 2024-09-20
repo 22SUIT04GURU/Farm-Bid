@@ -483,7 +483,14 @@ input, select {
 
 .input-group {
   position: relative;
+}
+
+.input-group + div
+{
   margin-bottom: 22px;
+  margin-top: 10px;
+  color: red;  
+  opacity: 0;
 }
 
 .input-group-icon {
@@ -651,4 +658,9 @@ input, select {
   .card-4 .card-body {
     padding: 50px 40px;
   }
+}
+
+#profile_details, #farmer_details, #product_details, #account_details, #dealer_details, .Submit-button
+{
+  display: none;
 }

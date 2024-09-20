@@ -31,7 +31,7 @@
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="login.php">Login</a></li>
+          <li><a href="login.php">Login</a>&nbsp;/&nbsp;<a href="signup.php">Register</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
