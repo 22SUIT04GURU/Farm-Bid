@@ -17,12 +17,12 @@
     
 </head>
 <body>
-  <div class="page-wrapper bg-success p-t-100 p-b-100 font-poppins">
+  <div class="page-wrapper bg-signup p-t-100 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title"><img src="images/logo.png" alt="Farm Bid Logo" width="50" height="50">Registration Form <span>Already Have An Account? <a href="login.php">Login</a> </span> </h2>
-                    <form method="POST">
+                    <form method="POST" action="register.php">
                         <!-- PERSONAL DETAILS -->
                         <div id="personal_details">
                             <h2 class="title">Personal Details</h2>
@@ -275,7 +275,7 @@
                                     </div>
                                 </div>
                                 <div class="p-t-15">
-                                        <input type="submit" name="" class="btn btn--radius-2 btn--blue next-btn" value="Submit">
+                                       <div class="btn btn--radius-2 btn--blue next-btn">Submit</div>
                                 </div>
                         </div>  
 
@@ -322,10 +322,10 @@
                                     </div>
                                 </div>
                                 <div class="p-t-15">
-                                        <!-- <div class="btn btn--radius-2 btn--blue next-btn">Submit</div> -->
-                                        <input type="submit" name="" class="btn btn--radius-2 btn--blue next-btn" value="Submit">
+                                        <div class="btn btn--radius-2 btn--blue next-btn">Submit</div>
                                 </div>
                         </div>  
+                        <input type="submit" id="register_submit" name="register_submit" class="" value="Submit">
                     </form>
                 </div>
             </div>
@@ -337,6 +337,6 @@
   *
   {
     font-family: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
+}
 </style>
 <script type="text/javascript" src="js/script.js"></script>

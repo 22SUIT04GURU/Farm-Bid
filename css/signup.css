@@ -361,7 +361,7 @@ input, select {
 
 .input--style-4 {
   line-height: 50px;
-  background: #fafafa;
+  background: #e9e4e4;
   -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -660,7 +660,12 @@ input, select {
   }
 }
 
-#profile_details, #farmer_details, #product_details, #account_details, #dealer_details, .Submit-button, #Others, #Others2
+#profile_details, #farmer_details, #product_details, #account_details, #dealer_details, .Submit-button, #Others, #Others2, #register_submit
 {
   display: none;
+}
+
+.bg-signup
+{
+  background: url('../images/background-2.jpg');
 }

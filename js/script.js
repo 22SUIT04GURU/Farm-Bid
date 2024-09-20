@@ -145,10 +145,13 @@
                 {
                        if(particularDiv.nextElementSibling.id == 'profile_details') particularDiv.nextElementSibling.style.display = "block";
                        else if(particularDiv.nextElementSibling.id == 'farmer_details') document.getElementById('dealer_details').style.display = "block";
+                       else document.getElementById('register_submit').click();
                 }
                 else
                 {
                     console.log("Registration Successful");
+                    console.log(document.getElementById('register_submit'));
+                    document.getElementById('register_submit').click();
                 }
             }
             else if(emptyElement!=undefined)
@@ -192,4 +195,6 @@
         }
     })
 
-    
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
