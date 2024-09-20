@@ -62,7 +62,7 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Gender</label>
-                                            <select class="input--style-4 p-3" name="gender" data-fieldname="Gender">
+                                            <select class="input--style-4 p-3" name="gender" data-fieldname="Gender" required="">
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
@@ -74,16 +74,16 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Role</label>
-                                            <select class="input--style-4 p-3" name="role" data-fieldname="Role">
+                                            <select class="input--style-4 p-3" name="role" data-fieldname="Role" required="">
                                             <option disabled="disabled" selected="selected">Choose Role</option>
-                                            <option value="male">Farmer</option>
-                                            <option value="female">Dealer</option>
+                                            <option value="farmer">Farmer</option>
+                                            <option value="dealer">Dealer</option>
                                         </select>
                                         </div>
                                         <div>Select</div>
                                     </div>                                  
                                 </div>
-                                 <div class="p-t-15">
+                                <div class="p-t-15">
                                         <div class="btn btn--radius-2 btn--blue next-btn">Next</div>
                                 </div>
                         </div>
@@ -95,21 +95,21 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">User name</label>
-                                            <input class="input--style-4" type="text" required="" name="username" data-regexp="regNamePattern" data-fieldname="Username">
+                                            <input class="input--style-4" type="text" required="" name="username" data-regexp="regNamePattern" data-fieldname="Username" required="">
                                         </div>
                                         <div>Enter</div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Password</label>
-                                            <input class="input--style-4" type="password" required="" name="password" data-regexp="regPasswordPattern" data-fieldname="Password">
+                                            <input class="input--style-4" type="password" required="" name="password" data-regexp="regPasswordPattern" data-fieldname="Password" required="">
                                         </div>
                                         <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="p-t-15">
                                         <div class="btn btn--radius-2 btn--blue next-btn">Next</div>
-                                    </div>
+                                </div>
                         </div>
 
                         <!-- FARMER DETAILS -->
@@ -119,41 +119,77 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Address</label>
-                                            <input class="input--style-4" type="text" name="address">
+                                            <input class="input--style-4" type="text" name="address" data-regexp="regAddressPattern" data-fieldname="Address">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Nationality</label>
-                                            <input class="input--style-4" type="text" disabled="" value="Indian" name="nationality">
+                                            <input class="input--style-4" type="text" disabled="" value="Indian" name="nationality" data-regexp="regNamePattern" data-fieldname="nationality">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">State</label>
-                                            <input class="input--style-4" type="text" disabled="" value="Tamil Nadu" name="state">
+                                            <input class="input--style-4" type="text" disabled="" value="Tamil Nadu" name="state" data-regexp="regNamePattern" data-fieldname="state">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">District</label>
-                                            <input class="input--style-4" type="text" name="last_name">
+                                            <select class="input--style-4 p-3" name="district" data-fieldname="District">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                                <option value="Ariyalur">Ariyalur</option>
+                                                <option value="Chengalpattu">Chengalpattu</option>
+                                                <option value="Chennai">Chennai</option>
+                                                <option value="Coimbatore">Coimbatore</option>
+                                                <option value="Cuddalore">Cuddalore</option>
+                                                <option value="Dindigul">Dindigul</option>
+                                                <option value="Ernakulam">Ernakulam</option>
+                                                <option value="Thanjavur">Thanjavur</option>
+                                                <option value="Thoothukudi">Thoothukudi</option>
+                                                <option value="Trichy">Trichy</option>
+                                                <option value="Virudhunagar">Virudhunagar</option>
+                                                <option value="Vellore">Vellore</option>
+                                                <option value="Tiruvallur">Tiruvallur</option>
+                                                <option value="Tirunelveli">Tirunelveli</option>
+                                                <option value="Nilgiris">Nilgiris</option>
+                                                <option value="Namakkal">Namakkal</option>
+                                                <option value="Pudukkottai">Pudukkottai</option>
+                                                <option value="Sivagangai">Sivagangai</option>
+                                                <option value="Salem">Salem</option>
+                                                <option value="Theni">Theni</option>
+                                                <option value="Tiruvannamalai">Tiruvannamalai</option>
+                                                <option value="Kanyakumari">Kanyakumari</option>
+                                                <option value="Krishnagiri">Krishnagiri</option>
+                                                <option value="Madurai">Madurai</option>
+                                                <option value="Nagapattinam">Nagapattinam</option>
+                                                <option value="Perambalur">Perambalur</option>
+                                                <option value="Ramnad">Ramnad</option>
+                                                <option value="Ramanathapuram">Ramanathapuram</option>
+                                                <option value="Tirupur">Tirupur</option>
+                                        </select>
                                         </div>
+                                        <div>Select</div>
                                     </div>
                                 </div>
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Pin Code</label>
-                                            <input class="input--style-4" type="text" name="pincode">
+                                            <input class="input--style-4" type="text" name="pincode" data-regexp="regPinCodePattern" data-fieldname="Pincode">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="p-t-15">
-                                        <button class="btn btn--radius-2 btn--blue next-btn">Next</button>
-                                    </div>
+                                        <div class="btn btn--radius-2 btn--blue next-btn">Next</div>
+                                </div>
                         </div>  
 
                         <!-- PRODUCT DETAILS -->
@@ -163,32 +199,50 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Farm Name</label>
-                                            <input class="input--style-4" type="text" name="farm_name">
+                                            <input class="input--style-4" type="text" name="farm_name" data-regexp="regAddressPattern" data-fieldname="Farm Name">
                                         </div>
+                                        <div>enter</div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Farm Location</label>
-                                            <input class="input--style-4" type="text" name="farm_location">
+                                            <input class="input--style-4" type="text" name="farm_location" data-regexp="regAddressPattern" data-fieldname="Farm Location">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group">
-                                            <label class="label">Farm Size</label>
-                                            <input class="input--style-4" type="text" name="farm_size">
+                                            <label class="label">Farm Size (in acres)</label>
+                                            <input class="input--style-4" type="text" name="farm_size" data-regexp="regFarmSizePattern" data-fieldname="Farm Size">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                     <div class="col-2">
-                                        <div class="input-group">
+                                         <div class="input-group">
                                             <label class="label">Type of Crop/Products Grown</label>
-                                            <input class="input--style-4" type="text" name="type_of_crop">
+                                            <select class="input--style-4 p-3" name="type_of_crop" data-fieldname="this Field" id="type_of_crop">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Wheat">Wheat</option>
+                                            <option value="Paddy">Paddy</option>
+                                            <option value="Millets">Millets</option>
+                                            <option value="Grains">Grains</option>
+                                            <option value="Others">Others</option>
+                                        </select>
                                         </div>
+                                        <div>Enter</div>
+                                    </div>
+                                    <div class="col-2" id="Others">
+                                        <div class="input-group">
+                                            <label class="label">Others</label>
+                                            <input class="input--style-4" type="text" name="Others" data-regexp="regNamePattern" data-fieldname="Others">
+                                        </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="p-t-15">
-                                    <button class="btn btn--radius-2 btn--blue next-btn">Next</button>
+                                        <div class="btn btn--radius-2 btn--blue next-btn">Next</div>
                                 </div>
                         </div>  
 
@@ -199,61 +253,79 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Bank Name</label>
-                                            <input class="input--style-4" type="text" name="first_name">
+                                            <input class="input--style-4" type="text" name="bank_name" data-regexp="regNamePattern" data-fieldname="Bank Name">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">IFSC Code</label>
-                                            <input class="input--style-4" type="text" name="last_name">
+                                            <input class="input--style-4" type="text" name="ifsc_code" data-regexp="regIFSCPattern" data-fieldname="IFSC Code">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Account Number</label>
-                                            <input class="input--style-4" type="text" name="first_name">
+                                            <input class="input--style-4" type="text" name="account_number" data-regexp="regAccountNumberPattern" data-fieldname="Account Number">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="p-t-15">
-                                    <button class="btn btn--radius-2 btn--blue next-btn">Next</button>
+                                        <input type="submit" name="" class="btn btn--radius-2 btn--blue next-btn" value="Submit">
                                 </div>
                         </div>  
 
                         <!-- DEALER DETAILS -->
                         <div id="dealer_details">
-                                <h2 class="title">Details</h2>
+                                <h2 class="title">Dealer Details</h2>
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Shop Name</label>
-                                            <input class="input--style-4" type="text" name="first_name">
+                                            <input class="input--style-4" type="text" name="shop_name" data-regexp="regNamePattern" data-fieldname="Shop Name">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">Shop Location</label>
-                                            <input class="input--style-4" type="text" name="last_name">
+                                            <input class="input--style-4" type="text" name="shop_location" data-regexp="regAddressPattern" data-fieldname="Shop Location">
                                         </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="row row-space">
                                     <div class="col-2">
-                                        <div class="input-group">
-                                            <label class="label">Types of Crops prefer to buy</label>
-                                            <input class="input--style-4" type="text" name="first_name">
+                                         <div class="input-group">
+                                            <label class="label">Type of Crops Prefer to buy</label>
+                                            <select class="input--style-4 p-3" name="type_of_crop_prefer_to_buy" data-fieldname="this Field" id="type_of_crop_prefer_to_buy">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Wheat">Wheat</option>
+                                            <option value="Paddy">Paddy</option>
+                                            <option value="Millets">Millets</option>
+                                            <option value="Grains">Grains</option>
+                                            <option value="Others">Others</option>
+                                        </select>
                                         </div>
+                                        <div>Enter</div>
+                                    </div>
+                                    <div class="col-2" id="Others2">
+                                        <div class="input-group">
+                                            <label class="label">Others</label>
+                                            <input class="input--style-4" type="text" name="Others" data-regexp="regNamePattern" data-fieldname="Others">
+                                        </div>
+                                        <div>Enter</div>
                                     </div>
                                 </div>
                                 <div class="p-t-15">
-                                    <button class="btn btn--radius-2 btn--blue next-btn" id="submit-btn">Submit</button>
+                                        <!-- <div class="btn btn--radius-2 btn--blue next-btn">Submit</div> -->
+                                        <input type="submit" name="" class="btn btn--radius-2 btn--blue next-btn" value="Submit">
                                 </div>
                         </div>  
-
-                        
-
                     </form>
                 </div>
             </div>
@@ -296,10 +368,15 @@
 
         const regularExpressions = 
         {
-            regNamePattern : /^([a-z,\s,\-]{1,50})$/i,
+            regNamePattern : /^([a-z,\s,\-]{4,50})$/i,
             regEmailPattern : /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
             regPhonePattern : /^\d{10}$/,
-            regPasswordPattern : /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()]).{8,}$/
+            regPasswordPattern : /^(?=.*[a-zA-Z])(?=.*[\W_]).{8,}$/,
+            regPinCodePattern : /^\d{6}$|^\d{3}-\d{3}$/,
+            regAddressPattern : /^[a-zA-Z0-9,.\s]+$/,
+            regFarmSizePattern : /^\d+(\.\d+)?\s*(acres?|acre)?$/,
+            regAccountNumberPattern : /^\d{8,12}$/,
+            regIFSCPattern : /^[A-Z]{4}0[A-Z0-9]{6}$/
         };
 
         function validatingPatterns(e)
@@ -329,52 +406,24 @@
             let FieldName = e.target.getAttribute("data-fieldname");
             let warningdiv = e.target.parentElement.nextElementSibling;
             warningdiv.style.opacity = 1;
-            warningdiv.innerHTML = `Invalid ${FieldName}`;
+            if(FieldName == "Password") warningdiv.innerHTML = `Password contains atleast 8 characters <br>Password contains alphabets, numbers and special character 
+                <br>Password contains atleast one special character`;
+            else warningdiv.innerHTML = `Invalid ${FieldName}`;
             e.target.style.border = '2px solid red';
-            if(FieldName == "Passoword")
-            {
-                const requirements = [];
-                password = e.target;
-                // Check password length
-                if (password.length < 8) {
-                    requirements.push('At least 8 characters');
-                }
-                // Check for uppercase letter
-                if (!/[A-Z]/.test(password)) {
-                    requirements.push('At least one uppercase letter');
-                }
-                // Check for lowercase letter
-                if (!/[a-z]/.test(password)) {
-                    requirements.push('At least one lowercase letter');
-                }
-                // Check for digit
-                if (!/\d/.test(password)) {
-                    requirements.push('At least one digit');
-                }
-                // Check for special character
-                if (!/[!@#$%^&*()]/.test(password)) {
-                    requirements.push('At least one special character (e.g., !@#$%^&*())');
-                }
-
-                // Alert requirements if any are not met
-                if (requirements.length > 0) {
-                    alert('Your password must meet the following requirements:\n- ' + requirements.join('\n- '));
-                } else {
-                    alert('Password is valid!');
-                }
-            }
         }
     });
     })
 
     const nextBtn = document.querySelectorAll(".next-btn");
+    othersSelected = false;
+    role = "";
 
     nextBtn.forEach((e) => {
         e.addEventListener("click",()=>{
 
             var invalid_element,emptyElement;
             particularDiv = e.parentElement.parentElement;
-            valid = true;
+            valid = true;            
 
             particularDiv.querySelectorAll("input, select").forEach((div_input)=>{
                 if(div_input.value == '' || div_input.value == 'Choose option' || div_input.value == 'Choose Role') 
@@ -385,23 +434,66 @@
                     else if(div_input.type == "text" && !validatingPatterns(div_input))
                     {
                         valid = false;
+                        console.log('correct');
                     }
                     if(emptyElement==undefined)
                     {
                         emptyElement = invalid_element;   
                     }
+
+                    if(div_input.getAttribute("data-fieldname") == 'this Field')
+                    {
+                        console.log("Type Corp " + div_input.value);
+                        if(div_input.value == "Others")
+                        {
+                            othersSelected = true;
+                        }
+                        else if(div_input.id == "type_of_crop")
+                        {
+                            document.getElementsByName("Others")[0].value = "OthersnotSelected";
+                        }
+                        else
+                        {
+                            document.getElementsByName("Others")[1].value = "OthersnotSelected";   
+                        }
+                    }
+
+                    if(div_input.getAttribute("data-fieldname") == 'Others' && othersSelected) 
+                    {
+                        if(div_input.value == "OthersnotSelected")
+                        {
+                            valid = false;
+                        }
+                    }
+
+                    if(div_input.getAttribute("data-fieldname") == 'Role') 
+                    {
+                        role = div_input.value;   
+                    }
+
             });
 
             console.log(valid);
 
             if(valid)
             {
-                console.log(particularDiv);
-                console.log(particularDiv.nextElementSibling);
+                console.log(role);
                 particularDiv.style.display = "none";
-                particularDiv.nextElementSibling.style.display  = "block";
+                if(role == 'farmer' && (particularDiv.nextElementSibling.id == 'farmer_details' || particularDiv.nextElementSibling.id == 'product_details' || particularDiv.nextElementSibling.id == 'account_details' || particularDiv.nextElementSibling.id == 'profile_details'))
+                {
+                    particularDiv.nextElementSibling.style.display  = "block";    
+                }
+                else if(role == 'dealer' && particularDiv.nextElementSibling)
+                {
+                       if(particularDiv.nextElementSibling.id == 'profile_details') particularDiv.nextElementSibling.style.display = "block";
+                       else if(particularDiv.nextElementSibling.id == 'farmer_details') document.getElementById('dealer_details').style.display = "block";
+                }
+                else
+                {
+                    console.log("Registration Successful");
+                }
             }
-            else
+            else if(emptyElement!=undefined)
             {
                 console.log(emptyElement);
                 let FieldName = emptyElement.getAttribute("data-fieldname");
@@ -412,12 +504,35 @@
                 warningdiv.innerHTML = `Enter ${FieldName}`;
                 fadeout(warningdiv);
             }
-
         });
     });
 
-    document.getElementById('submit-btn').addEventListener("click",()=>{
 
-    });
+    // OTHER OPTIONS
+    document.getElementById('type_of_crop').addEventListener("change",(e)=>{
+        if(e.target.value == "Others")
+        {   
+            document.getElementById("Others").style.display = "block";
+            document.getElementsByName("Others")[0].required = true;
+        }
+        else
+        {   
+            document.getElementById("Others").style.display = "none";
+            document.getElementsByName("Others")[0].required = false;
+        }
+    })
+    document.getElementById('type_of_crop_prefer_to_buy').addEventListener("change",(e)=>{
+        if(e.target.value == "Others")
+        {   
+            document.getElementById("Others2").style.display = "block";
+            document.getElementsByName("Others")[1].required = true;
+        }
+        else
+        {   
+            document.getElementById("Others2").style.display = "none";
+            document.getElementsByName("Others")[1].required = false;
+        }
+    })
 
+    
 </script>

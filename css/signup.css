@@ -660,7 +660,7 @@ input, select {
   }
 }
 
-#profile_details, #farmer_details, #product_details, #account_details, #dealer_details, .Submit-button
+#profile_details, #farmer_details, #product_details, #account_details, #dealer_details, .Submit-button, #Others, #Others2
 {
   display: none;
 }
