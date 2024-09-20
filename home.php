@@ -91,7 +91,7 @@
   <footer id="footer" class="footer dark-background mt-5">
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Farm Bid</strong> <span>All Rights Reserved</span></p>
+      <p><span></span> <strong class="px-1 sitename">Farm Bid</strong> <span>All Rights Reserved</span></p>
     </div>
   </footer>
 </body>
