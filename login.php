@@ -20,18 +20,18 @@
 <section class="p-3 p-md-4 p-xl-4">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-9 col-lg-7 col-xl-5 col-xxl-5">
-        <div class="card border border-light-subtle rounded-4">
+      <div class="col-12 col-md-6 col-lg-7 col-xl-5 col-xxl-4">
+        <div class="card border border-light-subtle rounded-4 glass-effect">
           <div class="card-body p-3 p-md-4 p-xl-5">
             <div class="row">
               <div class="col-12">
                 <div class="mb-5">
                   <div class="text-center mb-4">
-                    <a href="#!">
+                    <a href="index.php">
                       <img src="images/logo.png" alt="Farm Bid Logo" width="100" height="100">
                     </a>
                   </div>
-                  <h4 class="text-center">Sign In</h4>
+                  <h4 class="text-center text-light">Sign In</h4>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@
               <div class="col-12">
                 <hr class="border-secondary-subtle">
                 <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
-                  <a href="signup.php" class="link-secondary text-decoration-none">Create new account</a>
+                  <a href="signup.php" class="link-light text-decoration-none">Create new account</a>
                 </div>
               </div>
             </div>
@@ -80,7 +80,15 @@
   }
   section
   {
-    background-color: #dbdbdb;
+    background: url('images/background-4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
+  }
+  .glass-effect
+  {
+    background-color: rgba(255, 255, 255, 0.228);
+  backdrop-filter: blur(20px);
   }
 </style>

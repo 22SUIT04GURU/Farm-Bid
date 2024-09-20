@@ -361,7 +361,7 @@ input, select {
 
 .input--style-4 {
   line-height: 50px;
-  background: #e9e4e4;
+  background: #fff;
   -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -640,7 +640,9 @@ input, select {
 }
 
 .card-4 {
-  background: #fff;
+  /*background: #fff;*/
+  background-color: rgba(255, 255, 255, 0.228);
+  backdrop-filter: blur(20px);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -667,5 +669,5 @@ input, select {
 
 .bg-signup
 {
-  background: url('../images/background-2.jpg');
+  background: url('../images/background-4.jpg');
 }
