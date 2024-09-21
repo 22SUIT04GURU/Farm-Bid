@@ -22,25 +22,7 @@
 </head>
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="images/logo.png" alt="">
-        <h1 class="sitename">Farm Bid</h1><span>.</span>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="home.php" class="active">Home</a></li>
-          <li><a href="my_history.php">My History</a></li>
-          <li><a href="our_farmers.php">Our Farmers</a></li>
-          <li><a href="#">My Profile</a></li>
-          <li><a href="#">LogOut<i class='bx bx-power-off'></i></a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+ <?php include 'header.php'; ?>
 
   <main class="main">
 

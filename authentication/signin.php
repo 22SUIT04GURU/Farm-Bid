@@ -13,7 +13,7 @@
                     if (!empty($user_username) && !empty($user_password)) 
                     {
 
-                        $query = "SELECT username, password FROM user_tbl WHERE username = '$user_username' AND password = '$user_password'";
+                        $query = "SELECT id,username, password FROM user_tbl WHERE username = '$user_username' AND password = '$user_password'";
 
                         $data = mysqli_query($conn, $query);
 

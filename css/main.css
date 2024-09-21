@@ -1123,7 +1123,7 @@ section,
 }
 
 .services .service-item.item-cyan i {
-  color: #0dcaf0;
+  /*color: #0dcaf0;*/
 }
 
 .services .service-item.item-cyan:hover .icon i {
