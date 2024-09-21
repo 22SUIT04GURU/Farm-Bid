@@ -32,7 +32,7 @@
         <h1 class="mb-2 mb-lg-0">Farmers</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li class="current">Our Farmers</li>
           </ol>
         </nav>
@@ -48,7 +48,7 @@
 
           <?php
 
-           $sql = "SELECT * FROM user_tbl WHERE role = 'farmer'";
+           $sql = "SELECT * FROM user_tbl WHERE role = 'farmer' AND id !='$user_id'";
 
             $result = $conn->query($sql);
                         
@@ -69,7 +69,7 @@
                 </svg>
                 <i class="bi bi-activity"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
+              <a href="my_profile.php?id=<?php echo $row['id']; ?>" class="stretched-link">
                 <h3><?php echo $row['first_name'] ?></h3>
               </a>
               <p><i class='bx bxl-gmail'></i> <?php echo $row['email'] ?></p>

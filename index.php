@@ -22,7 +22,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="home.php" class="logo d-flex align-items-center me-auto">
         <img src="images/logo.png" alt="">
         <h1 class="sitename">Tech Farm Bid</h1><span>.</span>
       </a>

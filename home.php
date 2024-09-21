@@ -34,7 +34,7 @@
         <div class="carousel-item active">
           <img src="images/background-3.jpg" alt="">
           <div class="container">
-            <h2>Welcome  <?php echo $_SESSION['username']; ?></h2>
+            <h2>Welcome  <?php echo $row['first_name']; ?></h2>
             <p>To redefine agriculture with technology, cultivating a world where farmers thrive, trade flourishes, and food security is a global reality.</p>
             <a href="#" class="btn-get-started">My History</a>
           </div>
