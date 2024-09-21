@@ -50,6 +50,8 @@
             }
         }
 
+    duplicate_entry = false;
+
     document.querySelectorAll('input[type="text"], input[type="password"]').forEach((inp) =>{
         inp.addEventListener("keyup",function(e){
         regexp = e.target.getAttribute("data-regexp");
@@ -61,6 +63,7 @@
         }
         else
         {
+            console.log(duplicate_entry);
             let FieldName = e.target.getAttribute("data-fieldname");
             let warningdiv = e.target.parentElement.nextElementSibling;
             warningdiv.style.opacity = 1;
@@ -94,11 +97,25 @@
                         valid = false;
                         console.log('correct');
                     }
+
+                    // CHECKING DUPLICATE ENTRY FOR USERNAME
+                    if(div_input.id == 'username' && javascript_array.includes(div_input.value))
+                    {
+                        valid = false;
+                        duplicate_entry = true;
+                    }
+                    else if(div_input.id == 'username' && !javascript_array.includes(div_input.value))
+                    {
+                        valid = true;
+                        duplicate_entry = false;
+                    }
+
                     if(emptyElement==undefined)
                     {
                         emptyElement = invalid_element;   
                     }
 
+                    // SCRIPT FOR TYPES AND OTHERS FIELD
                     if(div_input.getAttribute("data-fieldname") == 'this Field')
                     {
                         console.log("Type Corp " + div_input.value);
@@ -108,11 +125,11 @@
                         }
                         else if(div_input.id == "type_of_crop")
                         {
-                            document.getElementsByName("Others")[0].value = "OthersnotSelected";
+                            document.getElementsByName("Others1")[0].value = "OthersnotSelected";
                         }
                         else
                         {
-                            document.getElementsByName("Others")[1].value = "OthersnotSelected";   
+                            document.getElementsByName("Others2")[0].value = "OthersnotSelected";   
                         }
                     }
 
@@ -124,6 +141,7 @@
                         }
                     }
 
+                    // SETTING ROLE VARIABLE
                     if(div_input.getAttribute("data-fieldname") == 'Role') 
                     {
                         role = div_input.value;   
@@ -156,14 +174,21 @@
             }
             else if(emptyElement!=undefined)
             {
-                console.log(emptyElement);
+                // console.log(emptyElement);
                 let FieldName = emptyElement.getAttribute("data-fieldname");
-                console.log(FieldName);
+                // console.log(FieldName);
                 let warningdiv = emptyElement.parentElement.nextElementSibling;
-                console.log(warningdiv);
+                // console.log(warningdiv);
                 warningdiv.style.opacity = 1;
                 warningdiv.innerHTML = `Enter ${FieldName}`;
                 fadeout(warningdiv);
+            }
+            else if(duplicate_entry)
+            {
+                console.log("username Already Exists");
+                userwarningdiv = document.getElementById('username').parentElement.nextElementSibling;
+                userwarningdiv.style.opacity = 1;
+                userwarningdiv.innerHTML = `Username Already Exists!`;
             }
         });
     });

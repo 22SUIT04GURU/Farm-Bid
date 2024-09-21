@@ -1,3 +1,25 @@
+<?php
+
+    include 'database/db-connection.php';
+                            
+    $sql = "SELECT username FROM user_tbl";
+    $result = $conn->query($sql);
+    $existing_usernames = array();
+    
+    while($row = $result->fetch_assoc())
+    {
+        // echo $row['username']." ";
+        array_push($existing_usernames, $row['username']);
+    }
+
+    $existing_usernames_array = json_encode($existing_usernames);
+    echo "<script>var javascript_array = ". $existing_usernames_array . ";</script>\n";
+    // print_r($existing_usernames_array);
+    
+    $conn->close();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +44,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title"><img src="images/logo.png" alt="Farm Bid Logo" width="50" height="50">Registration Form <span>Already Have An Account? <a href="login.php">Login</a> </span> </h2>
-                    <form method="POST" action="register.php">
+                    <form method="POST" action="authentication/register.php">
                         <!-- PERSONAL DETAILS -->
                         <div id="personal_details">
                             <h2 class="title">Personal Details</h2>
@@ -95,7 +117,7 @@
                                     <div class="col-2">
                                         <div class="input-group">
                                             <label class="label">User name</label>
-                                            <input class="input--style-4" type="text" required="" name="username" data-regexp="regNamePattern" data-fieldname="Username" required="">
+                                            <input class="input--style-4" type="text" id="username" required="" name="username" data-regexp="regNamePattern" data-fieldname="Username" required="">
                                         </div>
                                         <div>Enter</div>
                                     </div>
@@ -236,7 +258,7 @@
                                     <div class="col-2" id="Others">
                                         <div class="input-group">
                                             <label class="label">Others</label>
-                                            <input class="input--style-4" type="text" name="Others" data-regexp="regNamePattern" data-fieldname="Others">
+                                            <input class="input--style-4" type="text" name="Others1" data-regexp="regNamePattern" data-fieldname="Others">
                                         </div>
                                         <div>Enter</div>
                                     </div>
@@ -316,7 +338,7 @@
                                     <div class="col-2" id="Others2">
                                         <div class="input-group">
                                             <label class="label">Others</label>
-                                            <input class="input--style-4" type="text" name="Others" data-regexp="regNamePattern" data-fieldname="Others">
+                                            <input class="input--style-4" type="text" name="Others2" data-regexp="regNamePattern" data-fieldname="Others">
                                         </div>
                                         <div>Enter</div>
                                     </div>

@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+
+  if(isset($_GET['msg']))
+  {
+    $msg = $_GET['msg'];
+    echo '<script>alert('.$msg.');</script>';
+  }
+
+  session_start();
+
+  if(!isset($_SESSION['username']))
+                {
+
+?><!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -35,11 +48,11 @@
                 </div>
               </div>
             </div>
-            <form action="#!">
+            <form action="authentication/signin.php" method="POST">
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="text" id="text" placeholder="Enter your UserName" required>
+                    <input type="text" class="form-control" name="username" id="text" placeholder="Enter your UserName" required>
                     <label for="text" class="form-label">User Name</label>
                   </div>
                 </div>
@@ -51,7 +64,7 @@
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn bsb-btn-xl btn-success" type="submit">Log in now</button>
+                    <button class="btn bsb-btn-xl btn-success" name="submit" type="submit">Log in now</button>
                   </div>
                 </div>
               </div>
@@ -70,6 +83,13 @@
     </div>
   </div>
 </section>
+    <?php
+  }
+  else
+  {
+    header('location: home.php');
+  }
+      ?>
 </body>
 </html>
 <style type="text/css">
