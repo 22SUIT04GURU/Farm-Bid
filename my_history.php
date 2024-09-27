@@ -41,8 +41,9 @@
 
     <div class="page-content page-container" id="page-content">
     <div class="padding">
+        <div class="add-bid-item mb-3"><a href="add_item.php"><span>+</span></a></div>
         <div class="row container d-flex justify-content-center">
-<div class="col-lg-8 grid-margin stretch-card">
+<div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="table-responsive">
@@ -50,48 +51,57 @@
                       <thead>
                         <tr>
                           <th>S.No.</th>
-                          <th>User</th>
-                          <th>Product</th>
-                          <th>Sale</th>
+                          <th>Product Name</th>
+                          <th>Product Category</th>
+                          <th>Initial Bid</th>
+                          <th>Start Time</th>
+                          <th>End Time</th>
+                          <th>Highest Bidder</th>
+                          <th>Posted On</th>
                           <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
+                                  <?php
+
+           $sql = "SELECT * FROM auction_item_tbl WHERE farmer_id = '$user_id'";
+
+            $result = $conn->query($sql);
+            $i = 1;
+                        
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while($row = $result->fetch_assoc()) {
+                      ?>
+
                         <tr>
-                          <td>1</td>
-                          <td>Hitesh Chauhan</td>
-                          <td>Engine</td>
-                          <td class="text-danger"> 18.76% <i class="fa fa-arrow-down"></i></td>
-                          <td><label class="badge badge-danger">Pending</label></td>
+                          <?php 
+                            $created_at = date('d-m-Y', strtotime($row['created_at'])); 
+                            $start_time = ($row['start_time']=='requested...') ? 'requested' : date('d-m-Y', strtotime($row['start_time']));
+                            $end_time = ($row['end_time']=='requested...') ? 'requested' : date('d-m-Y', strtotime($row['end_time']));
+                            $status = ($row['status'] == 'pending') ? 'warning' : 'success';
+                          ?>
+                          <td><?php echo $i++; ?></td>
+                          <td><?php echo $row['item_name'] ?></td>
+                          <td><?php echo $row['item_category'] ?></td>
+                          <td><?php echo "&#8377; ".$row['initial_amount'] ?></td>
+                          <td><?php echo $start_time ?></td>
+                          <td><?php echo $end_time ?></td>
+                          <td><?php echo $row['highest_bidder'] ?></td>
+                          <td><?php echo $created_at ?></td>
+                          <td><label class="badge badge-<?php echo $status; ?>"><?php echo $row['status']; ?></label></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Samso Palto</td>
-                          <td>Brakes</td>
-                          <td class="text-danger"> 11.06% <i class="fa fa-arrow-down"></i></td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Tiplis mang</td>
-                          <td>Window</td>
-                          <td class="text-danger"> 35.00% <i class="fa fa-arrow-down"></i></td>
-                          <td><label class="badge badge-success">Fixed</label></td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Pter parker</td>
-                          <td>Head light</td>
-                          <td class="text-success"> 22.00% <i class="fa fa-arrow-up"></i></td>
-                          <td><label class="badge badge-success">Completed</label></td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>Ankit Dave</td>
-                          <td>Back light</td>
-                          <td class="text-success"> 28.05% <i class="fa fa-arrow-up"></i></td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
+
+                          <?php
+                          }
+                        }
+                          else {
+                            echo "<div class='mb-3 bg-warning p-3 rounded'>No Item found, why don't you post one</div>";
+                          }
+                          $conn->close();
+                    ?>
+
+
                       </tbody>
                     </table>
                   </div>

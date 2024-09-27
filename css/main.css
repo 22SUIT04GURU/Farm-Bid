@@ -2631,7 +2631,20 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
-.bx-power-off
+.add-bid-item
 {
-  font-size: 1.2em !important;
+    display: flex;
+    justify-content: flex-end;
+    width: 83%;
+    color: white;
+    font-size: 1.3em;
+}
+
+.add-bid-item > a
+{
+    background: green;
+    padding: 0% 1%;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
 }

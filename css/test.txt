@@ -1,5 +1,13 @@
-Tech Farm Bid --- Logo
+auction_item
+	id
+	farmer_id
+	item_name
+	item_category
+	init_bid
+	description
+	image
+	start_time
+	end_time
+	highest_bidder
 
-Occupation -> Role
-Remove Address Type -> Add Address, Pin code
-Type of Crops, Types of Crops prefer to buy -> Select(1,2,3,others) -- others-> text field
+	form(name,category,init,desc,image)

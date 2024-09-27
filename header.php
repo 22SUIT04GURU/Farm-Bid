@@ -21,15 +21,16 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
-      <a href="home.php" class="logo d-flex align-items-center me-auto">
+      <a href="#" class="logo d-flex align-items-center me-auto">
         <img src="images/logo.png" alt="">
-        <h1 class="sitename">Farm Bid</h1><span>.</span>
+        <h1 class="sitename">Tech Farm Bid</h1><span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="home.php" class="">Home</a></li>
-          <li><a href="my_history.php">My History</a></li>
+          <li><a href="aution-items.php" class="">Auction</a></li>
+          <?php if($user_role=='farmer') { ?><li><a href="my_history.php">My History</a></li><?php } ?>
           <li><a href="our_farmers.php">Our Farmers</a></li>
           <?php if($user_role=='dealer') { ?><li><a href="our_dealers.php">Our Dealers</a></li><?php } ?>
           <li><a href="my_profile.php?id=<?php echo $user_id; ?>">My Profile</a></li>
@@ -40,5 +41,6 @@
   </header>
   <script type="text/javascript">
     const fullUrl = window.location.pathname.split('/')[2];
+    console.log(document.querySelector(`a[href="${fullUrl}"]`));
     document.querySelector(`a[href="${fullUrl}"]`).classList.add("active");
   </script>
