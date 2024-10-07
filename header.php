@@ -29,7 +29,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="home.php" class="">Home</a></li>
-          <li><a href="aution-items.php" class="">Auction</a></li>
+          <?php if($user_role=='dealer') { ?><li><a href="aution-items.php" class="">Auction</a></li><?php } ?>
           <?php if($user_role=='farmer') { ?><li><a href="my_history.php">My History</a></li><?php } ?>
           <li><a href="our_farmers.php">Our Farmers</a></li>
           <?php if($user_role=='dealer') { ?><li><a href="our_dealers.php">Our Dealers</a></li><?php } ?>

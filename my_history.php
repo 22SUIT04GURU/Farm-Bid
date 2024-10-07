@@ -77,8 +77,8 @@
                         <tr>
                           <?php 
                             $created_at = date('d-m-Y', strtotime($row['created_at'])); 
-                            $start_time = ($row['start_time']=='requested...') ? 'requested' : date('d-m-Y', strtotime($row['start_time']));
-                            $end_time = ($row['end_time']=='requested...') ? 'requested' : date('d-m-Y', strtotime($row['end_time']));
+                            $start_time = ($row['start_time']=='requested...') ? 'requested' : date('d-m-Y H:m', strtotime($row['start_time']));
+                            $end_time = ($row['end_time']=='requested...') ? 'requested' : date('d-m-Y H:m', strtotime($row['end_time']));
                             $status = ($row['status'] == 'pending') ? 'warning' : 'success';
                           ?>
                           <td><?php echo $i++; ?></td>

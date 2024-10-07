@@ -90,8 +90,10 @@
                         <tr>
                           <?php 
                             $created_at = date('d-m-Y', strtotime($row['created_at'])); 
-                            $start_time = ($row['start_time']=='requested...') ? 'requested' : date('d-m-Y', strtotime($row['start_time']));
-                            $end_time = ($row['end_time']=='requested...') ? 'requested' : date('d-m-Y', strtotime($row['end_time']));
+                            // $date = new DateTime($dateString);
+                            // $formattedDate = $date->format('F j, Y, g:i A');
+                            $start_time = ($row['start_time']=='requested...') ? 'requested' : date('d-m-Y H:m', strtotime($row['start_time']));
+                            $end_time = ($row['end_time']=='requested...') ? 'requested' : date('d-m-Y H:m', strtotime($row['end_time']));
                           ?>
 
                           <td><?php echo $i; ?></td>

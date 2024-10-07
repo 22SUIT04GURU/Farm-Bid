@@ -44,7 +44,8 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title"><img src="images/logo.png" alt="Farm Bid Logo" width="50" height="50">Registration Form <span>Already Have An Account? <a href="login.php">Login</a> </span> </h2>
-                    <form method="POST" action="authentication/register.php">
+                    <form method="POST" action="authentication/register.php" onkeydown="if(event.keyCode === 13) { alert('You have pressed Enter key, use Next button instead');  
+                            return false; }">
                         <!-- PERSONAL DETAILS -->
                         <div id="personal_details">
                             <h2 class="title">Personal Details</h2>
