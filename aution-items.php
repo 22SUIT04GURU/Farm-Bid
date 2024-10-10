@@ -71,7 +71,7 @@
                 <img src="uploads/<?php echo $row['image']; ?>" style='border-radius: 50%; height: 100%; width: 100%'>
                 <i class="bi bi-activity"></i>
               </div>
-              <a href="single-auction-item.php" class="stretched-link">
+              <a href="single-auction-item.php?id=<?php echo $row['id']; ?>" class="stretched-link">
                 <h3><?php echo $row['item_name']; ?></h3>
               </a>
               <p><i class='bx bxs-category'></i> <?php echo $row['item_category'] ?></p>

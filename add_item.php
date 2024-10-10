@@ -20,7 +20,7 @@
               echo " ";
           }
 
-    $query = "INSERT INTO auction_item_tbl (farmer_id, item_name, item_category, initial_amount, description, image) VALUES ('$user_id', '$item_name', '$item_category', '$initial_amount', '$description', '$filename1')";
+    $query = "INSERT INTO auction_item_tbl (farmer_id, item_name, item_category, initial_amount, description, image, highest_bidder_amount) VALUES ('$user_id', '$item_name', '$item_category', '$initial_amount', '$description', '$filename1', '$initial_amount')";
 
         if(mysqli_query($conn, $query))
         {
