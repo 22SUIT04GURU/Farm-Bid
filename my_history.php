@@ -77,16 +77,29 @@
                         <tr>
                           <?php 
                             $created_at = date('d-m-Y', strtotime($row['created_at'])); 
-                            $start_time = ($row['start_time']=='requested...') ? 'requested' : date('d-m-Y H:m', strtotime($row['start_time']));
-                            $end_time = ($row['end_time']=='requested...') ? 'requested' : date('d-m-Y H:m', strtotime($row['end_time']));
-                            $status = ($row['status'] == 'pending') ? 'warning' : 'success';
+                            $start_time = ($row['start_time']=='requested...') ? 'requested' : date('d-m-Y H:i', strtotime($row['start_time']));
+                            $end_time = ($row['end_time']=='requested...') ? 'requested' : date('d-m-Y H:i', strtotime($row['end_time']));
+                            // $status = ($row['status'] == 'pending') ? 'warning' : 'success';
+                            if($row['status'] == 'Ended') 
+                            {
+                              $status = 'danger';
+                            }
+                            else if ($row['status']=='pending')
+                            {
+                              $status = 'warning';
+                            }
+                            else
+                            { 
+                              $status = 'success';
+                            }
+
                           ?>
                           <td><?php echo $i++; ?></td>
                           <td><?php echo $row['item_name'] ?></td>
                           <td><?php echo $row['item_category'] ?></td>
                           <td><?php echo "&#8377; ".$row['initial_amount'] ?></td>
-                          <td><?php echo $start_time ?></td>
-                          <td><?php echo $end_time ?></td>
+                          <td><?php echo $start_time; ?></td>
+                          <td><?php echo $end_time; ?></td>
                           <td><?php echo $row['highest_bidder'] ?></td>
                           <td><?php echo $created_at ?></td>
                           <td><label class="badge badge-<?php echo $status; ?>"><?php echo $row['status']; ?></label></td>

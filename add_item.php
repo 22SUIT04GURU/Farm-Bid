@@ -5,8 +5,6 @@
     session_start();
     require_once('database/db-connection.php');
     $user_id = $_SESSION['user_id'];
-
-    $user_id = $_SESSION['user_id'];
     $item_name = $_POST['item_name'];
     $item_category = $_POST['item_category'];
     $description = $_POST['description'];

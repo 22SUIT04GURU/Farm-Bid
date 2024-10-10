@@ -42,6 +42,13 @@
      <!-- Services Section -->
     <section id="services" class="services section light-background">
 
+      <div class="container mb-5" id="filterDiv">
+      <a class="btn btn-outline-primary btn-lg btn-primary text-light" href="#all" role="button" data-status='all'>All</a>
+      <a class="btn btn-outline-primary btn-lg" href="#on" role="button" data-status='On_Going'>On Going</a>
+      <a class="btn btn-outline-primary btn-lg" href="#up" role="button" data-status='Assigned'>Up Coming</a>
+      <a class="btn btn-outline-primary btn-lg" href="#end" role="button" data-status='Ended'>Ended</a>
+      </div>
+
       <div class="container">
 
         <div class="row gy-4">
@@ -58,14 +65,14 @@
               while($row = $result->fetch_assoc()) {
                       ?>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 filterOut all <?php echo $row['status']; ?>" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item item-cyan position-relative">
               <div class="icon">
                 <img src="uploads/<?php echo $row['image']; ?>" style='border-radius: 50%; height: 100%; width: 100%'>
                 <i class="bi bi-activity"></i>
               </div>
               <a href="single-auction-item.php" class="stretched-link">
-                <h3><?php echo $row['item_name'] ?></h3>
+                <h3><?php echo $row['item_name']; ?></h3>
               </a>
               <p><i class='bx bxs-category'></i> <?php echo $row['item_category'] ?></p>
               <?php 
@@ -76,9 +83,10 @@
                   <p>Starts in  <?php echo date("d-m-Y H:i", strtotime($start_time)) ?></p>  
               <?php 
                 }
-                else if($currentTime > $start_time && $currentTime < $end_time) 
+                else if($currentTime >= $start_time && $currentTime <= $end_time) 
                 {
               ?>
+                <p>Live Auction</p>
                 <p>Ends in <?php echo date("d-m-Y H:i", strtotime($end_time)) ?></p>
                 <?php
               }
@@ -115,3 +123,33 @@
   </footer>
 </body>
 </html>
+
+<script>
+  const nodeList = document.querySelectorAll('a.btn.btn-outline-primary.btn-lg');
+
+  function filter(filterOptions)
+  {
+    document.querySelectorAll(".filterOut").forEach(element =>{
+        element.style.display = "none";
+    });
+    document.querySelectorAll("."+filterOptions).forEach(element =>{
+        element.style.display = "block";
+    });
+  }
+
+  nodeList.forEach(element => {
+    element.addEventListener("click", (e)=>{
+      document.querySelectorAll('.btn.btn-outline-primary.btn-lg').forEach(button => {
+        button.classList.remove("btn-primary");
+        button.classList.remove("text-light");
+    });
+
+      //  console.log(e.target);
+       e.target.classList.add("btn-primary");
+       e.target.classList.add("text-light");
+
+       filter(e.target.getAttribute('data-status'));
+    });
+  });
+  
+</script>
