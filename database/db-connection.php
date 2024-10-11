@@ -32,13 +32,21 @@ if ($result->num_rows > 0) {
         // echo "Auction ".$auctionEndedTime;
         if($currentTime >= $auctionStartTime && $currentTime <= $auctionEndedTime)
         {
-            $sql = "UPDATE auction_item_tbl SET status = 'On_Going', highest_bidder = 'On_Going' WHERE id = $currentId";
+            $sql = "UPDATE auction_item_tbl SET status = 'On_Going' WHERE id = $currentId";
             $conn->query($sql);
         }
         else if ($currentTime > $auctionEndedTime && $row['start_time'] != 'requested...')
         {
-            $sql = "UPDATE auction_item_tbl SET status = 'Ended', highest_bidder = 'No One' WHERE id = $currentId";
-            $conn->query($sql);
+            if($row['highest_bidder'] != 'No One')
+            {
+                $sql = "UPDATE auction_item_tbl SET status = 'Ended' WHERE id = $currentId";
+                $conn->query($sql);
+            }
+            else
+            {
+                $sql = "UPDATE auction_item_tbl SET status = 'Ended', highest_bidder = 'No One' WHERE id = $currentId";
+                $conn->query($sql);                
+            }
         }
   }
 }

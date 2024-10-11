@@ -1,4 +1,8 @@
 <?php
+
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     
     require_once('database/db-connection.php');
 
@@ -6,6 +10,33 @@
     $sql1 = "SELECT * FROM auction_item_tbl WHERE id = '$user_id'";
     $result1 = mysqli_query($conn, $sql1);
     $row1 = mysqli_fetch_assoc($result1);
+
+    if(isset($_POST['amount']))
+    {
+        $amount = $_POST['amount'];
+        if($amount <= $row1['highest_bidder_amount'])
+        {
+            echo "<script>alert('Bid greater than ". $row1['highest_bidder_amount'] ."');</script>";
+        }
+        else
+        {
+            $highest_bidder = $_SESSION['user_id'];
+            $highest_bidder_amount = $_POST['amount'];
+
+            // echo "Current User : ".$highest_bidder."<br>";
+            // echo "Current Highest Bidder : ".$row1['highest_bidder']."<br>";
+            // echo "Current Highest Bidder Amount : ".$row1['highest_bidder_amount']."<br>";
+            // echo "Auction ID : ".$user_id."<br>";
+
+            $sql = "UPDATE `auction_item_tbl` SET `highest_bidder`= '$highest_bidder', `highest_bidder_amount`='$highest_bidder_amount' WHERE id=$user_id";
+
+            if ($conn->query($sql) === TRUE) 
+            {
+                echo "<script>alert('Bidded Successfully');</script>";
+                header('Location: single-auction-item.php?id='.$user_id);
+            }
+        }
+    }
 
 ?>
 <!DOCTYPE html>
@@ -64,9 +95,26 @@
                 <p>
                 <?php echo $row1['description']; ?>
                 </p>
-                <h3><?php echo "Rs. ".$row1['highest_bidder_amount']."/-"; ?></h3>
-                <input type="number" placeholder="Enter bid amount" autofocus id="bid">
-                <button>Bid Now</button>
+                <?php 
+                    if($row1['status'] == 'Ended' && $row1['highest_bidder'] == "No One")
+                    { ?>
+                        <h4><?php echo "Bid Failed !"; ?></h4>        
+                    <?php }
+                    else if ($row1['status'] == 'Ended' && $row1['highest_bidder'] != "No One")
+                    { ?>
+                        <h4><?php echo "Bid Won By ".$row1['highest_bidder']; ?></h4>        
+                    <?php }
+                    else if($row1['status'] == 'On_Going')
+                    { ?>
+
+                        <h3><?php echo "Rs. ".$row1['highest_bidder_amount']."/-"; ?></h3>
+                        <form action="" method="POST">
+                        <input type="number" name="amount" placeholder="Enter bid amount" autofocus id="bid">
+                        <button>Bid Now</button>
+                        </form>
+                    <?php }
+                ?>
+                
             </div>
         </div>
       </div>
@@ -168,7 +216,7 @@
     margin-bottom: 36px;
 }
 
-.productcontainer .details h3 {
+.productcontainer .details h3 , h4 {
     margin: 0;
     padding: 0;
     font-size: 2.5em;
